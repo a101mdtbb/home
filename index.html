@@ -140,4 +140,146 @@
   </script>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FELICIDADES</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px 20px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #e8e8e8;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .aviso {
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      padding: 32px 28px;
+      border: 1px solid #8b0000;
+      background-color: #160000;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      display: none; /* Se oculta hasta que termine la "carga" */
+    }
+    .aviso h1 {
+      color: #ff2a2a;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+      letter-spacing: 0.5px;
+    }
+    .aviso p {
+      font-size: 1.05rem;
+      margin: 0 0 16px 0;
+      text-align: left;
+    }
+    .aviso p:last-child {
+      margin-bottom: 0;
+    }
+    .destacado {
+      color: #ffcccc;
+      font-weight: 500;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: none; /* También se oculta al principio */
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+
+    /* Estilos de la barra de carga falsa */
+    #loading-container {
+      max-width: 480px;
+      margin: 120px auto 0;
+      text-align: center;
+    }
+    #loading-text {
+      font-size: 1.15rem;
+      color: #ff6666;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 22px;
+      background-color: #2a2a2a;
+      border-radius: 11px;
+      overflow: hidden;
+      border: 1px solid #444;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #8b0000, #ff2a2a);
+      border-radius: 11px;
+      transition: width 0.3s ease;
+    }
+    #percent {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de carga falsa -->
+  <div id="loading-container">
+    <div id="loading-text">Enviando datos...</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+    <div id="percent">0%</div>
+  </div>
+
+  <div class="aviso" id="contenido">
+    <h1>FELICIDADES</h1>
+    <p>
+      Le informamos que <span class="destacado">todos los datos de su navegador han sido recopilados y transmitidos a un tercero</span>.
+    </p>
+    <p>
+      La información obtenida incluye, entre otros elementos, el historial de navegación, las cookies almacenadas, los datos de sesión activos, las direcciones IP utilizadas y los registros de actividad recientes en este dispositivo.
+    </p>
+  </div>
+  <img
+    id="imagen"
+    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmakerworld.bblmw.com%2Fmakerworld%2Fmodel%2FUSe626629a333a2d%2Fdesign%2F2025-09-30_70f885ec41c878.png%3Fx-oss-process%3Dimage%2Fresize%2Cw_1000%2Fformat%2Cwebp&f=1&nofb=1&ipt=31fcd8e89a4c1613faab518c5eeacdcac70c0bc94973ce624cca3cda0e5bab75"
+    alt="Imagen"
+  >
+
+  <script>
+    // Simulación de carga falsa
+    let progreso = 0;
+    const barra = document.getElementById("progress");
+    const porcentaje = document.getElementById("percent");
+    const contenedorCarga = document.getElementById("loading-container");
+    const contenido = document.getElementById("contenido");
+    const imagen = document.getElementById("imagen");
+
+    const intervalo = setInterval(() => {
+      // Avanza de forma irregular para que se vea más realista
+      progreso += Math.random() * 12 + 3;
+      if (progreso > 100) progreso = 100;
+
+      barra.style.width = progreso + "%";
+      porcentaje.textContent = Math.floor(progreso) + "%";
+
+      if (progreso >= 100) {
+        clearInterval(intervalo);
+        setTimeout(() => {
+          contenedorCarga.style.display = "none";
+          contenido.style.display = "block";
+          imagen.style.display = "block";
+        }, 600);
+      }
+    }, 180);
+  </script>
+
+</body>
 </html>
