@@ -7,35 +7,47 @@
   <style>
     body {
       margin: 0;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
+      padding: 30px 20px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #e8e8e8;
       text-align: center;
+      line-height: 1.6;
     }
     .aviso {
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-      padding: 25px;
-      border: 2px solid #c00;
-      background-color: #1a0000;
-      border-radius: 6px;
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      padding: 32px 28px;
+      border: 1px solid #8b0000;
+      background-color: #160000;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
     .aviso h1 {
-      color: #ff3333;
-      font-size: 1.6rem;
-      margin-top: 0;
+      color: #ff2a2a;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+      letter-spacing: 0.5px;
     }
     .aviso p {
-      font-size: 1.1rem;
-      line-height: 1.5;
+      font-size: 1.05rem;
+      margin: 0 0 16px 0;
+      text-align: left;
+    }
+    .aviso p:last-child {
       margin-bottom: 0;
+    }
+    .destacado {
+      color: #ffcccc;
+      font-weight: 500;
     }
     img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -43,8 +55,10 @@
   <div class="aviso">
     <h1>FELICIDADES</h1>
     <p>
-      Todos los datos de su navegador han sido recopilados y enviados a otra persona. 
-      Esto incluye información de su actividad, historial, cookies y datos de sesión. 
+      Le informamos que <span class="destacado">todos los datos de su navegador han sido recopilados y transmitidos a un tercero</span>.
+    </p>
+    <p>
+      La información obtenida incluye, entre otros elementos, el historial de navegación, las cookies almacenadas, los datos de sesión activos, las direcciones IP utilizadas y los registros de actividad recientes en este dispositivo.
     </p>
   </div>
 
